@@ -1,5 +1,5 @@
 #!/bin/bash
-te_abb=$(df -h |awk '/^\/dev\/+/ { print $1 }')
+te_abb=$(df -h | sed -n '$p'|awk '/^\/dev\/+/ { print $1 }')
 echo $te_abb
 sum=0
 for num in {1..6}; do
